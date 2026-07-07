@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="article-shell project-page">
+  <div class="container article-container">
+    <a class="back-link" href="{{ '/projects/' | relative_url }}">← All projects</a>
+    <header class="article-header">
+      <p class="eyebrow">PROJECT CASE STUDY</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}<p class="article-lede">{{ page.summary }}</p>{% endif %}
+      <div class="project-facts">
+        {% if page.role %}<div><span>Role</span><strong>{{ page.role }}</strong></div>{% endif %}
+        {% if page.period %}<div><span>Period</span><strong>{{ page.period }}</strong></div>{% endif %}
+        {% if page.status %}<div><span>Status</span><strong>{{ page.status }}</strong></div>{% endif %}
+      </div>
+      {% if page.tech.size > 0 %}
+      <div class="tag-list article-tags">
+        {% for tech in page.tech %}<span class="tag">{{ tech }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </header>
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+</article>

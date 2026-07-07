@@ -1,0 +1,47 @@
+title: TruthStudio
+description: Unity, C#, 게임 클라이언트 개발 기록을 남기는 개인 개발 블로그
+url: "https://KimSangWoo1.github.io"
+baseurl: "TrithStudio.github.io" # 프로젝트 저장소라면 "/REPOSITORY_NAME"으로 변경하세요.
+lang: ko-KR
+timezone: Asia/Seoul
+
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+
+# 새 글의 기본값입니다. 필요한 항목만 포스트 Front Matter에서 덮어쓰면 됩니다.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: TruthStudio
+      reading_time: "3 min"
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
